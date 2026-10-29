@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LOKEN</title>
+<meta name="description" content="A full-Rust inference stack that runs language and generative-media models on your own machine.">
+<meta property="og:title" content="LOKEN">
+<meta property="og:description" content="A full-Rust inference stack that runs language and generative-media models on your own machine.">
+<meta property="og:image" content="https://raw.githubusercontent.com/loken-ai/.github/main/brand/png/banner.png">
+<link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/loken-ai/.github/main/brand/favicon.svg">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="/"><img src="https://raw.githubusercontent.com/loken-ai/.github/main/brand/icon.svg" alt="" width="34" height="34"><span><b>loken</b></span></a>
+<nav><a href="#components">Components</a><a href="#read">Read</a><a href="/benchmarks/">Benchmarks</a></nav>
+<a class="gh" href="https://github.com/loken-ai">GitHub</a>
+</div></header>
+
+<main class="wrap">
+<section class="hero">
+  <img src="https://raw.githubusercontent.com/loken-ai/.github/main/brand/banner.svg" alt="LOKEN, self-hosted multimodal inference" width="720" height="180">
+  <p class="lede">A full-Rust inference stack that runs language and generative-media models on your own
+  machine. One server speaks the OpenAI, Ollama and Anthropic APIs and calls nothing out.</p>
+  <ul class="facts">
+    <li>NVIDIA through CUDA</li><li>AMD through ROCm</li><li>Vulkan</li><li>Intel through OpenCL</li>
+    <li>The host processor</li><li>Several machines as one</li>
+  </ul>
+</section>
+
+<section id="read">
+  <h2>Read</h2>
+  <div class="cards">
+    <article class="card read main">
+      <h3 class="title"><a href="/loken/presentation/loken-anatomy.html">A map of lokend</a></h3>
+      <p>The daemon drawn on a body. The layer stack runs up the spine, each group of modules sits in
+      one region, and each plate plays what its modules do.</p>
+    </article>
+    <article class="card read">
+      <h3 class="title"><a href="/loken/learn/slides.html">The fundamentals of inference</a></h3>
+      <p>Ten lessons for a developer who has never opened an inference engine, as a deck.</p>
+    </article>
+    <article class="card read">
+      <h3 class="title"><a href="/benchmarks/">Benchmarks by hardware</a></h3>
+      <p>Every run of every machine against llama.cpp, Ollama and vLLM. The cells loken loses are
+      published with the rest.</p>
+    </article>
+    <article class="card read">
+      <h3 class="title"><a href="/loken/">The loken documentation</a></h3>
+      <p>The reference, the guides and the lessons, in reading order.</p>
+    </article>
+  </div>
+</section>
+
+<section id="components">
+  <h2>Components</h2>
+  <div class="cards">
+    <article class="card">
+      <h3>loken</h3>
+      <p>The inference server, <code>lokend</code>. Language, vision, speech, image, video, music
+      and forecasts behind one daemon.</p>
+      <div class="links"><a href="/loken/">Docs</a><a href="https://github.com/loken-ai/loken">Source</a></div>
+    </article>
+    <article class="card">
+      <h3>lokraft</h3>
+      <p>The desktop client: a chat window, and a studio for images, audio and video.</p>
+      <div class="links"><a href="https://github.com/loken-ai/lokraft">Source</a></div>
+    </article>
+    <article class="card">
+      <h3>lokode <span class="tag">Experimental</span></h3>
+      <p>A coding agent in the terminal, against a model on your own machine.</p>
+      <div class="links"><a href="https://github.com/loken-ai/lokode">Source</a></div>
+    </article>
+    <article class="card">
+      <h3>lokprof</h3>
+      <p>Benchmarks a local inference server against another, on the same prompts and the same
+      clock.</p>
+      <div class="links"><a href="https://github.com/loken-ai/lokprof">Source</a></div>
+    </article>
+    <article class="card">
+      <h3>lokpit</h3>
+      <p>Watches a loken cluster: what each node holds, what it measures, and where they
+      disagree.</p>
+      <div class="links"><a href="https://github.com/loken-ai/lokpit">Source</a></div>
+    </article>
+    <article class="card">
+      <h3>benchmarks</h3>
+      <p>The bench campaign: its driver, its matrix, its protocol, and the runs every machine
+      shares.</p>
+      <div class="links"><a href="/benchmarks/">Results</a><a href="https://github.com/loken-ai/benchmarks">Source</a></div>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <span>LOKEN, from local and token.</span>
+  <a href="https://github.com/loken-ai">github.com/loken-ai</a>
+</div></footer>
+</body>
+</html>
