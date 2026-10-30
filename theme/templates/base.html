@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% block title %}{{ page.title }} - {{ site.title }}{% endblock %}</title>
+<meta name="description" content="{{ page.description or site.description }}">
+<link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/loken-ai/.github/main/brand/favicon.svg">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="{{ site.base_path }}/theme.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="{{ site.base_path }}/"><img src="https://raw.githubusercontent.com/loken-ai/.github/main/brand/icon.svg" alt="" width="34" height="34"><span><b>{{ site.title }}</b></span></a>
+<nav>{% for n in nav %}<a href="{{ n.url }}"{% if n.current %} aria-current="page"{% endif %}>{{ n.name }}</a>{% endfor %}</nav>
+<a class="gh" href="{{ site.repo }}">GitHub</a>
+</div></header>
+{% block main %}{% endblock %}
+<footer><div class="wrap"><a href="/">loken-ai.github.io</a><span>{{ site.title }}</span><a href="{{ site.repo }}">{{ site.repo | replace("https://", "") }}</a></div></footer>
+<script>
+document.querySelectorAll(".prose td:first-child").forEach(function (td) {
+  if (td.textContent.trim().length <= 30) td.classList.add("k");
+});
+</script>
+{% block script %}{% endblock %}
+</body>
+</html>

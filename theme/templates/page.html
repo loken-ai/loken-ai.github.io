@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block main %}
+{% set sec = site.sections[page.section] if page.section else none %}
+<main class="wrap{% if sec and sec.sidebar %} with-side{% endif %}">
+{% if sec and sec.sidebar %}
+<aside class="side"><b>{{ sec.title }}</b>{% for p in sec.pages %}<a href="{{ p.url }}"{% if p.url == page.url %} aria-current="page"{% endif %}>{{ p.nav_title }}</a>{% endfor %}</aside>
+{% endif %}
+<div class="prose">
+{{ page.content }}
+</div>
+</main>
+{% endblock %}
