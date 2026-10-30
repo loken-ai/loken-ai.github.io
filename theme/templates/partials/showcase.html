@@ -1,0 +1,18 @@
+{# slides: a list of name, title and caption. images: where the images are served, ending with a slash. #}
+{% set images = images or (site.base_path ~ "/img/") %}
+<div class="showcase" role="region" aria-roledescription="carousel" aria-label="{{ carousel_label or 'Screens' }}" style="--interval: {{ interval or 6 }}s">
+<div class="tabs" role="tablist" aria-orientation="vertical">
+{% for s in slides %}<button type="button" class="tab" role="tab" id="tab-{{ loop.index }}" aria-controls="panel-{{ loop.index }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ 0 if loop.first else -1 }}"><span class="n">0{{ loop.index }}</span><span class="t">{{ s.title }}</span><span class="d">{{ s.caption }}</span><span class="progress"></span></button>
+{% endfor %}
+<button type="button" class="pause" aria-label="Pause the automatic scroll" aria-pressed="false"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path class="i-pause" d="M8 5v14M16 5v14"/><path class="i-play" d="M8 5l11 7-11 7z" fill="currentColor"/></svg></button>
+</div>
+<div class="window">
+<div class="chrome"><i></i><i></i><i></i><span class="label">{{ slides[0].title }}</span></div>
+<div class="panels">
+{% for s in slides %}<div class="panel" role="tabpanel" id="panel-{{ loop.index }}" aria-labelledby="tab-{{ loop.index }}" data-active="{{ 'true' if loop.first else 'false' }}"><button type="button" class="zoom" aria-label="Enlarge: {{ s.caption }}"><picture><source media="(prefers-color-scheme: dark)" srcset="{{ images }}{{ s.name }}-dark.png"><img src="{{ images }}{{ s.name }}-light.png" alt="{{ s.caption }}"{% if not loop.first %} loading="lazy"{% endif %}></picture></button></div>
+{% endfor %}
+</div>
+</div>
+</div>
+<dialog class="lightbox" aria-label="Enlarged screen"><img alt=""></dialog>
+<script src="{{ site.base_path }}/showcase.js"></script>
