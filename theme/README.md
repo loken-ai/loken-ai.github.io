@@ -13,6 +13,7 @@ own documents, and names this directory as its `theme`.
 | `static/theme.css`             | the layer of style for documents, over `/site.css` of the root site      |
 | `static/showcase.js`           | what the showcase does: advance, hold, choose, pause, enlarge            |
 | `static/theme.js`              | the switch between the light and the dark theme                          |
+| `static/search.js`             | the palette that searches the titles of the site                         |
 
 A site replaces any template by writing one of the same name in its own `templates`, and any file
 by writing one of the same name in its own `static`.
@@ -39,6 +40,12 @@ The build gets the current theme, then builds the site.
 ```
 
 To work on a site with the theme next to it, point `theme` at the checkout of this repository.
+
+## Search
+
+The header has a button that opens a palette, and the slash key and Ctrl+K open it too. It reads
+`search.json`, the index of the titles that `mdkt site` writes, so a site gets it with nothing to
+configure. `search = false` in the properties file turns it off.
 
 ## Light and dark
 
