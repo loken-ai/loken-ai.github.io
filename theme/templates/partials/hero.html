@@ -1,0 +1,27 @@
+{# data.hero: tag, lede, install, primary and secondary, each with a label and a url inside the site. data.facts: short facts. #}
+<section class="ground-hero">
+<div class="copy">
+{% if data.hero.tag %}<span class="tag">{{ data.hero.tag }}</span>{% endif %}
+<h1>{{ site.title }}</h1>
+<p class="lede">{{ data.hero.lede }}</p>
+<div class="actions">
+{% if data.hero.primary %}<a class="btn primary" href="{{ site.base_path }}{{ data.hero.primary.url }}">{{ data.hero.primary.label }}</a>{% endif %}
+{% if data.hero.secondary %}<a class="btn ghost" href="{{ site.base_path }}{{ data.hero.secondary.url }}">{{ data.hero.secondary.label }}</a>{% endif %}
+</div>
+{% if data.hero.install %}<code class="install">{{ data.hero.install }}</code>{% endif %}
+{% if data.facts %}<ul class="facts">{% for f in data.facts %}<li>{{ f }}</li>{% endfor %}</ul>{% endif %}
+</div>
+<div class="art">
+<svg viewBox="0 0 400 300" role="img" aria-label="An open box with a block of tiles, one raised and lit">
+<polygon class="box-wall" points="104,202 200,148 200,48 104,102"/>
+<polygon class="box-wall" points="296,202 200,148 200,48 296,102"/>
+<polygon class="box-floor" points="200,148 296,202 200,256 104,202"/>
+<g class="tiles" stroke-width="1.5" stroke-linejoin="round">
+<polygon points="200,142 232,160 200,178 168,160" fill="#12A8B6"/><polygon points="168,160 200,178 200,202 168,184" fill="#0A6B76"/><polygon points="232,160 200,178 200,202 232,184" fill="#0C8794"/>
+<polygon points="232,160 264,178 232,196 200,178" fill="#12A8B6"/><polygon points="200,178 232,196 232,220 200,202" fill="#0A6B76"/><polygon points="264,178 232,196 232,220 264,202" fill="#0C8794"/>
+<polygon points="168,160 200,178 168,196 136,178" fill="#12A8B6"/><polygon points="136,178 168,196 168,220 136,202" fill="#0A6B76"/><polygon points="200,178 168,196 168,220 200,202" fill="#0C8794"/>
+<polygon points="200,154 232,172 200,190 168,172" fill="#34D399"/><polygon points="168,172 200,190 200,238 168,220" fill="#1B9068"/><polygon points="232,172 200,190 200,238 232,220" fill="#25B584"/>
+</g>
+</svg>
+</div>
+</section>
