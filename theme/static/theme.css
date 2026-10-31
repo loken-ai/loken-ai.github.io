@@ -171,3 +171,5 @@ dialog.search .keys { flex: none; margin: 0; padding: 8px 18px; border-top: 1px 
 @keyframes arrive { from { background: var(--surface2); box-shadow: 0 0 0 6px var(--surface2); } to { background: transparent; box-shadow: 0 0 0 6px transparent; } }
 @media (prefers-reduced-motion: reduce) { .prose :target { animation: none; background: var(--surface2); } }
 dialog.search .results span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+figure.diagram { margin: 0 0 24px; padding: 14px 16px; overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+figure.diagram svg { display: block; max-width: none; height: auto; }
