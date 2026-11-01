@@ -1,0 +1,48 @@
+name: Pages
+
+# Builds the site of every component with dkt, from dkt.toml and the theme of this repository.
+# The documents of a component are those of its submodule under .src, at the commit that this
+# repository records. The site is served at https://loken-ai.github.io/ and is built on request.
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  # The release of https://github.com/cbonte/dkt that builds the site.
+  DKT_VERSION: 0.3.0
+
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+      - name: Get the marks of the brand
+        run: |
+          mkdir .marks
+          cp .brand-src/brand/mark-dark.svg .brand-src/brand/mark-light.svg .marks/
+      - name: Build the results of the benchmarks
+        run: python3 .src/benchmarks/scripts/site.py
+      - name: Install dkt
+        run: |
+          archive="dkt-${DKT_VERSION}-x86_64-linux"
+          curl -fsSL "https://github.com/cbonte/dkt/releases/download/v${DKT_VERSION}/${archive}.tar.gz" \
+            | tar xz --strip-components=1 -C "$RUNNER_TEMP" "${archive}/dkt"
+          echo "$RUNNER_TEMP" >> "$GITHUB_PATH"
+      - run: dkt site dkt.toml -o public
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+      - id: deploy
+        uses: actions/deploy-pages@v4

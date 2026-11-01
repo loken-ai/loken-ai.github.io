@@ -1,0 +1,12 @@
+{# The home of the whole site: the hero of the theme, then a card for each component. #}
+{% extends "base.html" %}
+{% block title %}{{ site.title }}{% endblock %}
+{% block main %}
+<style>.card h3 a { color: inherit; text-decoration: none; } .card h3 a:hover, .card h3 a:focus-visible { color: var(--mint); text-decoration: underline; }.card .logo { display: block; margin-bottom: .6rem; }</style>
+<main class="wrap"><div class="prose">
+{% include "partials/hero.html" %}
+<section><h2>Components</h2>
+<div class="cards">{% for c in data.components %}<article class="card"><picture><source media="(prefers-color-scheme: dark)" srcset="/brand/{{ c.name }}-dark.svg"><img class="logo" src="/brand/{{ c.name }}-light.svg" alt="" width="48" height="48"></picture><h3><a href="{{ c.docs or c.repo }}">{{ c.name }}</a>{% if c.tag %} <span class="tag">{{ c.tag }}</span>{% endif %}</h3><p>{{ c.text }}</p><div class="links">{% if c.release %}<a href="{{ c.repo }}/releases/tag/{{ c.release }}">{{ c.release }}</a>{% endif %}<a href="{{ c.repo }}">Source</a></div></article>
+{% endfor %}</div></section>
+</div></main>
+{% endblock %}

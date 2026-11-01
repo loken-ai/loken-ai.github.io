@@ -1,0 +1,1055 @@
+[site]
+title = "loken"
+description = "Local-first software that runs language and generative-media models on your own machine."
+base_url = "https://loken-ai.github.io"
+theme = "theme"
+templates = "templates"
+static = "static"
+
+# The documents of each component, checked out under .src by the workflow of the site.
+[home]
+template = "index.html"
+
+[[nav]]
+name = "loken"
+url = "/loken/"
+section = "loken"
+
+[[nav]]
+name = "lokode"
+url = "/lokode/"
+section = "lokode"
+
+[[nav]]
+name = "lokraft"
+url = "/lokraft/"
+section = "lokraft"
+
+[[nav]]
+name = "lokpit"
+url = "/lokpit/"
+section = "lokpit"
+
+[[nav]]
+name = "lokprof"
+url = "/lokprof/"
+section = "lokprof"
+
+[[nav]]
+name = "Benchmarks"
+url = "/benchmarks/"
+section = "benchmarks"
+
+[[nav]]
+name = "Results"
+url = "/benchmarks/results/"
+
+# loken
+[[section]]
+name = "loken"
+url = "/loken/"
+template = "component.html"
+title = "loken"
+description = "The inference server, lokend."
+sidebar = true
+
+[[section.group]]
+title = "Get started"
+pages = [
+  ".src/loken/docs/start/overview.md",
+  ".src/loken/docs/start/install.md",
+  ".src/loken/docs/start/first-run.md",
+  ".src/loken/docs/start/concepts.md",
+  ".src/loken/docs/start/choose-a-model.md",
+]
+
+[[section.group]]
+title = "Guides"
+pages = [
+  ".src/loken/docs/guides/openai-sdk.md",
+  ".src/loken/docs/guides/ollama-clients.md",
+  ".src/loken/docs/guides/agents.md",
+  ".src/loken/docs/guides/images.md",
+  ".src/loken/docs/guides/speech.md",
+  ".src/loken/docs/guides/embeddings.md",
+  ".src/loken/docs/guides/drafter.md",
+  ".src/loken/docs/guides/kv-memory.md",
+]
+
+[[section.group]]
+title = "Operate"
+pages = [
+  ".src/loken/docs/operate/cluster.md",
+  ".src/loken/docs/operate/network.md",
+  ".src/loken/docs/operate/troubleshooting.md",
+]
+
+[[section.group]]
+title = "Inside lokend"
+pages = [
+  ".src/loken/docs/inside/map.md",
+  ".src/loken/docs/inside/layers.md",
+  ".src/loken/docs/inside/requests.md",
+  ".src/loken/docs/inside/generation.md",
+  ".src/loken/docs/inside/weights.md",
+  ".src/loken/docs/inside/backends.md",
+  ".src/loken/docs/inside/nodes.md",
+]
+
+[[section.group]]
+title = "Learn"
+pages = [
+  ".src/loken/docs/learn/README.md",
+  ".src/loken/docs/learn/01-tokens.md",
+  ".src/loken/docs/learn/02-model-file.md",
+  ".src/loken/docs/learn/03-quantisation.md",
+  ".src/loken/docs/learn/04-forward-pass.md",
+  ".src/loken/docs/learn/05-prefill-and-decode.md",
+  ".src/loken/docs/learn/06-kv-cache.md",
+  ".src/loken/docs/learn/07-sampling.md",
+  ".src/loken/docs/learn/08-speculative-decoding.md",
+  ".src/loken/docs/learn/09-placement.md",
+  ".src/loken/docs/learn/10-measuring.md",
+]
+
+[[section.group]]
+title = "Reference"
+pages = [
+  ".src/loken/docs/API.md",
+  ".src/loken/docs/CONFIGURATION.md",
+  ".src/loken/docs/MODELS.md",
+  ".src/loken/docs/CLUSTER.md",
+  ".src/loken/SECURITY.md",
+]
+
+[[page]]
+src = ".src/loken/docs/start/overview.md"
+url = "/loken/overview/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/start/install.md"
+url = "/loken/install/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/start/first-run.md"
+url = "/loken/first-run/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/start/concepts.md"
+url = "/loken/concepts/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/start/choose-a-model.md"
+url = "/loken/choose-a-model/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/guides/openai-sdk.md"
+url = "/loken/openai-sdk/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/guides/ollama-clients.md"
+url = "/loken/ollama-clients/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/guides/agents.md"
+url = "/loken/agents/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/guides/images.md"
+url = "/loken/images/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/guides/speech.md"
+url = "/loken/speech/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/guides/embeddings.md"
+url = "/loken/embeddings/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/guides/drafter.md"
+url = "/loken/drafter/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/guides/kv-memory.md"
+url = "/loken/kv-memory/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/operate/cluster.md"
+url = "/loken/cluster/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/operate/network.md"
+url = "/loken/network/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/operate/troubleshooting.md"
+url = "/loken/troubleshooting/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/inside/map.md"
+url = "/loken/map/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/inside/layers.md"
+url = "/loken/layers/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/inside/requests.md"
+url = "/loken/requests/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/inside/generation.md"
+url = "/loken/generation/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/inside/weights.md"
+url = "/loken/weights/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/inside/backends.md"
+url = "/loken/backends/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/inside/nodes.md"
+url = "/loken/nodes/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/learn/README.md"
+url = "/loken/learn/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/learn/01-tokens.md"
+url = "/loken/01-tokens/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/learn/02-model-file.md"
+url = "/loken/02-model-file/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/learn/03-quantisation.md"
+url = "/loken/03-quantisation/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/learn/04-forward-pass.md"
+url = "/loken/04-forward-pass/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/learn/05-prefill-and-decode.md"
+url = "/loken/05-prefill-and-decode/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/learn/06-kv-cache.md"
+url = "/loken/06-kv-cache/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/learn/07-sampling.md"
+url = "/loken/07-sampling/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/learn/08-speculative-decoding.md"
+url = "/loken/08-speculative-decoding/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/learn/09-placement.md"
+url = "/loken/09-placement/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/learn/10-measuring.md"
+url = "/loken/10-measuring/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/API.md"
+url = "/loken/api/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/CONFIGURATION.md"
+url = "/loken/configuration/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/MODELS.md"
+url = "/loken/models/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/docs/CLUSTER.md"
+url = "/loken/cluster-reference/"
+section = "loken"
+
+[[page]]
+src = ".src/loken/SECURITY.md"
+url = "/loken/security/"
+section = "loken"
+
+[[asset]]
+src = ".src/loken/docs/img"
+url = "/loken/img"
+exclude = ["features-*"]
+
+# lokode
+[[section]]
+name = "lokode"
+url = "/lokode/"
+template = "component.html"
+title = "lokode"
+description = "A coding agent in the terminal, against a model on your own machine."
+sidebar = true
+
+[[section.group]]
+title = "Get started"
+pages = [
+  ".src/lokode/README.md",
+  ".src/lokode/docs/map.md",
+  ".src/lokode/docs/guides/using.md",
+]
+
+[[section.group]]
+title = "Guides"
+pages = [
+  ".src/lokode/docs/guides/safety.md",
+  ".src/lokode/docs/guides/editing.md",
+  ".src/lokode/docs/guides/models.md",
+  ".src/lokode/docs/guides/agents.md",
+  ".src/lokode/docs/guides/extending.md",
+  ".src/lokode/docs/guides/interfaces.md",
+  ".src/lokode/docs/guides/configuration.md",
+]
+
+[[section.group]]
+title = "Project"
+pages = [
+  ".src/lokode/SECURITY.md",
+  ".src/lokode/CONTRIBUTING.md",
+]
+
+[[page]]
+src = ".src/lokode/README.md"
+url = "/lokode/overview/"
+section = "lokode"
+title = "Overview"
+
+[[page]]
+src = ".src/lokode/docs/map.md"
+url = "/lokode/map/"
+section = "lokode"
+title = "The map of lokode"
+
+[[page]]
+src = ".src/lokode/docs/guides/using.md"
+url = "/lokode/using/"
+section = "lokode"
+
+[[page]]
+src = ".src/lokode/docs/guides/safety.md"
+url = "/lokode/safety/"
+section = "lokode"
+
+[[page]]
+src = ".src/lokode/docs/guides/editing.md"
+url = "/lokode/editing/"
+section = "lokode"
+
+[[page]]
+src = ".src/lokode/docs/guides/models.md"
+url = "/lokode/models/"
+section = "lokode"
+
+[[page]]
+src = ".src/lokode/docs/guides/agents.md"
+url = "/lokode/agents/"
+section = "lokode"
+
+[[page]]
+src = ".src/lokode/docs/guides/extending.md"
+url = "/lokode/extending/"
+section = "lokode"
+
+[[page]]
+src = ".src/lokode/docs/guides/interfaces.md"
+url = "/lokode/interfaces/"
+section = "lokode"
+
+[[page]]
+src = ".src/lokode/docs/guides/configuration.md"
+url = "/lokode/configuration/"
+section = "lokode"
+
+[[page]]
+src = ".src/lokode/SECURITY.md"
+url = "/lokode/security/"
+section = "lokode"
+title = "Security"
+
+[[page]]
+src = ".src/lokode/CONTRIBUTING.md"
+url = "/lokode/contributing/"
+section = "lokode"
+title = "Contributing"
+
+[[asset]]
+src = ".src/lokode/docs/img"
+url = "/lokode/img"
+
+[[asset]]
+src = ".brand-src/brand/components"
+url = "/brand"
+
+[[asset]]
+src = ".marks"
+url = "/mark"
+
+[[asset]]
+src = ".src/benchmarks/site"
+url = "/benchmarks/results"
+
+[figures]
+src = "/lokode/img/{name}-light.png"
+dark = "/lokode/img/{name}-dark.png"
+
+[lint]
+disable = ["heading-dup"]
+
+[data.mark]
+light = "/mark/mark-light.svg"
+dark = "/mark/mark-dark.svg"
+
+[data.hero]
+logo = { light = "/brand/loken-light.svg", dark = "/brand/loken-dark.svg" }
+lede = "A full-Rust inference stack that runs language and generative-media models on your own machine. One server speaks the OpenAI, Ollama and Anthropic APIs and calls nothing out."
+
+[data]
+repo = "https://github.com/loken-ai/loken-ai.github.io"
+
+[data.sites.lokode]
+title = "lokode"
+tag = "Experimental"
+lede = "A coding agent in the terminal, against a model on your own machine. It needs no account, sends no request off the machine and asks you to adopt no editor."
+install = "cargo install --path ."
+primary = { label = "Read the documentation", url = "/lokode/overview/" }
+secondary = { label = "Take the tour", url = "/lokode/using/" }
+start = [
+  { label = "Read the overview", text = "What lokode does, and how to install it.", url = "/lokode/overview/" },
+  { label = "Take the tour of the screen", text = "The conversation, the rail and the keys.", url = "/lokode/using/" },
+  { label = "What is and is not enforced", text = "Approvals, the sandbox and what they leave open.", url = "/lokode/security/" },
+]
+facts = ["loken, ollama, vLLM, llama.cpp", "17 providers by name", "Sandboxed commands", "Zed, JetBrains, Neovim, Emacs, VS Code"]
+images = "/lokode/img/"
+ways_title = "One engine, 4 ways in"
+slides = [
+  { name = "session-120", title = "A session", caption = "In the middle of a turn: the conversation, a change waiting for you, and the rail with the plan, the changes and the engine" },
+  { name = "complete-command-120", title = "Commands", caption = "A command is completed as you type it, in the terminal" },
+  { name = "delegate-120", title = "Agents", caption = "A task handed to an agent, its steps folded under it" },
+  { name = "web-approval", title = "In a browser", caption = "The same engine in a browser: a change waits for an answer, with its diff" },
+  { name = "help-120", title = "Help", caption = "The commands and the keys, on a page of their own" },
+]
+ways = [
+  { title = "In the terminal", text = "The screen, the rail and the approvals.", command = "lokode", url = "/lokode/using/" },
+  { title = "In an editor", text = "Zed, JetBrains, Neovim, Emacs and VS Code.", command = "lokode acp", url = "/lokode/interfaces/" },
+  { title = "In a browser", text = "A page on this machine, behind a token.", command = "lokode serve", url = "/lokode/interfaces/#in-a-browser" },
+  { title = "Attached", text = "A terminal on a session that is running.", command = "lokode attach", url = "/lokode/interfaces/#in-the-terminal" },
+]
+
+[data.sites.loken]
+title = "loken"
+lede = "A local inference server for language and generative-media models. One process serves chat, images, audio, speech, transcription and video over the OpenAI, Ollama and Messages APIs."
+install = "cargo build --release"
+primary = { label = "Read the documentation", url = "/loken/overview/" }
+secondary = { label = "Install", url = "/loken/install/" }
+start = [
+  { label = "Read the overview", text = "What loken serves, and in which state.", url = "/loken/overview/" },
+  { label = "Install", text = "Build the 2 binaries from source.", url = "/loken/install/" },
+  { label = "Run the first model", text = "Start the daemon, pull a model, get an answer.", url = "/loken/first-run/" },
+  { label = "See how lokend works", text = "The way of a request, part by part, one figure each.", url = "/loken/map/" },
+  { label = "Learn how inference works", text = "10 lessons, with exercises and quizzes.", url = "/loken/learn/" },
+]
+facts = ["Inference never leaves the machine", "OpenAI, Ollama and Messages APIs", "Language, image, audio and video", "Energy reported beside speed"]
+images = "/loken/img/"
+ways_title = "What to do with it"
+slides = [
+  { file = "anatomy-overview.svg", title = "The daemon", caption = "lokend drawn on a body: each region does one part of the work" },
+  { file = "learn-layer.svg", title = "A layer", caption = "One decoder layer: what it reads and what it keeps" },
+  { file = "learn-placement.svg", title = "Placement", caption = "2 ways to spill a mixture that does not fit on the cards" },
+  { file = "learn-kv-tiers.svg", title = "KV cache", caption = "Where a conversation's KV lives, from the card to the disk" },
+]
+ways = [
+  { title = "Serve a chat model", text = "Any OpenAI client works unchanged.", command = "lokend serve", url = "/loken/openai-sdk/" },
+  { title = "Keep your Ollama clients", text = "The Ollama API on the same port.", command = "/api/chat", url = "/loken/ollama-clients/" },
+  { title = "Run a coding agent", text = "Claude Code or Cline on loken.", command = "loken launch claude", url = "/loken/agents/" },
+  { title = "Generate images", text = "Images, edits and variations.", command = "/v1/images/generations", url = "/loken/images/" },
+  { title = "Transcribe and speak", text = "Speech to text and back.", command = "/v1/audio/speech", url = "/loken/speech/" },
+  { title = "Use 2 machines", text = "Spread work across 2 nodes.", command = "[cluster]", url = "/loken/cluster/" },
+]
+
+[[data.components]]
+name = "loken"
+text = "The inference server, lokend. Language, vision, speech, image, video, music and forecasts behind one daemon."
+docs = "/loken/"
+repo = "https://github.com/loken-ai/loken"
+release = "v0.4.2"
+
+[[data.components]]
+name = "lokode"
+tag = "Experimental"
+text = "A coding agent in the terminal, against a model on your own machine."
+docs = "/lokode/"
+repo = "https://github.com/loken-ai/lokode"
+release = "v0.3.0"
+
+[[data.components]]
+name = "lokraft"
+text = "The desktop client: a chat window, and a studio for images, audio and video."
+docs = "/lokraft/"
+repo = "https://github.com/loken-ai/lokraft"
+release = "v0.1.0"
+
+[[data.components]]
+name = "lokpit"
+text = "Watches a loken cluster: what each node holds, what it measures, and where they disagree."
+docs = "/lokpit/"
+repo = "https://github.com/loken-ai/lokpit"
+release = "v0.1.0"
+
+[[data.components]]
+name = "lokprof"
+text = "Benchmarks a local inference server against another, on the same prompts and the same clock."
+docs = "/lokprof/"
+repo = "https://github.com/loken-ai/lokprof"
+release = "v0.4.1"
+
+[[data.components]]
+name = "benchmarks"
+text = "The bench campaign: its driver, its matrix, its protocol, and the runs every machine shares."
+docs = "/benchmarks/"
+repo = "https://github.com/loken-ai/benchmarks"
+
+# lokraft
+[[section]]
+name = "lokraft"
+url = "/lokraft/"
+title = "lokraft"
+template = "component.html"
+sidebar = true
+
+[[section.group]]
+title = "Get started"
+pages = [
+  ".src/lokraft/docs/start/overview.md",
+  ".src/lokraft/docs/start/install.md",
+  ".src/lokraft/docs/start/first-run.md",
+  ".src/lokraft/docs/start/concepts.md",
+]
+
+[[section.group]]
+title = "Guides"
+pages = [
+  ".src/lokraft/docs/guides/auto-routing.md",
+  ".src/lokraft/docs/guides/chat.md",
+  ".src/lokraft/docs/guides/connect.md",
+  ".src/lokraft/docs/guides/generate-audio.md",
+  ".src/lokraft/docs/guides/generate-image.md",
+  ".src/lokraft/docs/guides/log.md",
+  ".src/lokraft/docs/guides/manage-models.md",
+  ".src/lokraft/docs/guides/render-video.md",
+  ".src/lokraft/docs/guides/server-config.md",
+  ".src/lokraft/docs/guides/terminal.md",
+  ".src/lokraft/docs/guides/transcribe-audio.md",
+]
+
+[[section.group]]
+title = "Reference"
+pages = [
+  ".src/lokraft/docs/reference/command-line.md",
+  ".src/lokraft/docs/reference/config-file.md",
+  ".src/lokraft/docs/reference/keys.md",
+  ".src/lokraft/docs/reference/server-routes.md",
+  ".src/lokraft/docs/reference/settings.md",
+  ".src/lokraft/docs/reference/studio.md",
+]
+
+[[page]]
+src = ".src/lokraft/docs/start/overview.md"
+url = "/lokraft/overview/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/start/install.md"
+url = "/lokraft/install/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/start/first-run.md"
+url = "/lokraft/first-run/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/start/concepts.md"
+url = "/lokraft/concepts/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/guides/auto-routing.md"
+url = "/lokraft/auto-routing/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/guides/chat.md"
+url = "/lokraft/chat/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/guides/connect.md"
+url = "/lokraft/connect/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/guides/generate-audio.md"
+url = "/lokraft/generate-audio/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/guides/generate-image.md"
+url = "/lokraft/generate-image/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/guides/log.md"
+url = "/lokraft/log/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/guides/manage-models.md"
+url = "/lokraft/manage-models/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/guides/render-video.md"
+url = "/lokraft/render-video/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/guides/server-config.md"
+url = "/lokraft/server-config/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/guides/terminal.md"
+url = "/lokraft/terminal/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/guides/transcribe-audio.md"
+url = "/lokraft/transcribe-audio/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/reference/command-line.md"
+url = "/lokraft/command-line/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/reference/config-file.md"
+url = "/lokraft/config-file/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/reference/keys.md"
+url = "/lokraft/keys/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/reference/server-routes.md"
+url = "/lokraft/server-routes/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/reference/settings.md"
+url = "/lokraft/settings/"
+section = "lokraft"
+[[page]]
+src = ".src/lokraft/docs/reference/studio.md"
+url = "/lokraft/studio/"
+section = "lokraft"
+
+# lokprof
+[[section]]
+name = "lokprof"
+url = "/lokprof/"
+title = "lokprof"
+template = "component.html"
+sidebar = true
+
+[[section.group]]
+title = "Get started"
+pages = [
+  ".src/lokprof/docs/start/overview.md",
+  ".src/lokprof/docs/start/install.md",
+  ".src/lokprof/docs/start/first-run.md",
+  ".src/lokprof/docs/start/concepts.md",
+]
+
+[[section.group]]
+title = "Guides"
+pages = [
+  ".src/lokprof/docs/guides/baseline.md",
+  ".src/lokprof/docs/guides/compare-engines.md",
+  ".src/lokprof/docs/guides/concurrency.md",
+  ".src/lokprof/docs/guides/measure-energy.md",
+  ".src/lokprof/docs/guides/media.md",
+  ".src/lokprof/docs/guides/vision.md",
+]
+
+[[section.group]]
+title = "Reference"
+pages = [
+  ".src/lokprof/docs/reference/metrics.md",
+  ".src/lokprof/docs/reference/options.md",
+  ".src/lokprof/docs/reference/prompts.md",
+  ".src/lokprof/docs/reference/record.md",
+  ".src/lokprof/docs/reference/requests.md",
+]
+
+[[page]]
+src = ".src/lokprof/docs/start/overview.md"
+url = "/lokprof/overview/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/start/install.md"
+url = "/lokprof/install/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/start/first-run.md"
+url = "/lokprof/first-run/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/start/concepts.md"
+url = "/lokprof/concepts/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/guides/baseline.md"
+url = "/lokprof/baseline/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/guides/compare-engines.md"
+url = "/lokprof/compare-engines/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/guides/concurrency.md"
+url = "/lokprof/concurrency/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/guides/measure-energy.md"
+url = "/lokprof/measure-energy/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/guides/media.md"
+url = "/lokprof/media/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/guides/vision.md"
+url = "/lokprof/vision/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/reference/metrics.md"
+url = "/lokprof/metrics/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/reference/options.md"
+url = "/lokprof/options/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/reference/prompts.md"
+url = "/lokprof/prompts/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/reference/record.md"
+url = "/lokprof/record/"
+section = "lokprof"
+[[page]]
+src = ".src/lokprof/docs/reference/requests.md"
+url = "/lokprof/requests/"
+section = "lokprof"
+
+# lokpit
+[[section]]
+name = "lokpit"
+url = "/lokpit/"
+title = "lokpit"
+template = "component.html"
+sidebar = true
+
+[[section.group]]
+title = "Get started"
+pages = [
+  ".src/lokpit/docs/start/overview.md",
+  ".src/lokpit/docs/start/install.md",
+  ".src/lokpit/docs/start/first-run.md",
+  ".src/lokpit/docs/start/concepts.md",
+]
+
+[[section.group]]
+title = "Guides"
+pages = [
+  ".src/lokpit/docs/guides/diagnose-a-cluster.md",
+  ".src/lokpit/docs/guides/export-metrics.md",
+  ".src/lokpit/docs/guides/measure-layer-time.md",
+  ".src/lokpit/docs/guides/watch-a-cluster.md",
+]
+
+[[section.group]]
+title = "Reference"
+pages = [
+  ".src/lokpit/docs/reference/commands.md",
+  ".src/lokpit/docs/reference/doctor-rules.md",
+  ".src/lokpit/docs/reference/metrics.md",
+  ".src/lokpit/docs/reference/node-routes.md",
+  ".src/lokpit/docs/reference/views.md",
+]
+
+[[page]]
+src = ".src/lokpit/docs/start/overview.md"
+url = "/lokpit/overview/"
+section = "lokpit"
+[[page]]
+src = ".src/lokpit/docs/start/install.md"
+url = "/lokpit/install/"
+section = "lokpit"
+[[page]]
+src = ".src/lokpit/docs/start/first-run.md"
+url = "/lokpit/first-run/"
+section = "lokpit"
+[[page]]
+src = ".src/lokpit/docs/start/concepts.md"
+url = "/lokpit/concepts/"
+section = "lokpit"
+[[page]]
+src = ".src/lokpit/docs/guides/diagnose-a-cluster.md"
+url = "/lokpit/diagnose-a-cluster/"
+section = "lokpit"
+[[page]]
+src = ".src/lokpit/docs/guides/export-metrics.md"
+url = "/lokpit/export-metrics/"
+section = "lokpit"
+[[page]]
+src = ".src/lokpit/docs/guides/measure-layer-time.md"
+url = "/lokpit/measure-layer-time/"
+section = "lokpit"
+[[page]]
+src = ".src/lokpit/docs/guides/watch-a-cluster.md"
+url = "/lokpit/watch-a-cluster/"
+section = "lokpit"
+[[page]]
+src = ".src/lokpit/docs/reference/commands.md"
+url = "/lokpit/commands/"
+section = "lokpit"
+[[page]]
+src = ".src/lokpit/docs/reference/doctor-rules.md"
+url = "/lokpit/doctor-rules/"
+section = "lokpit"
+[[page]]
+src = ".src/lokpit/docs/reference/metrics.md"
+url = "/lokpit/metrics/"
+section = "lokpit"
+[[page]]
+src = ".src/lokpit/docs/reference/node-routes.md"
+url = "/lokpit/node-routes/"
+section = "lokpit"
+[[page]]
+src = ".src/lokpit/docs/reference/views.md"
+url = "/lokpit/views/"
+section = "lokpit"
+
+# benchmarks
+[[section]]
+name = "benchmarks"
+url = "/benchmarks/"
+title = "benchmarks"
+template = "component.html"
+sidebar = true
+
+[[section.group]]
+title = "Get started"
+pages = [
+  ".src/benchmarks/docs/start/overview.md",
+  ".src/benchmarks/docs/start/install.md",
+  ".src/benchmarks/docs/start/first-run.md",
+  ".src/benchmarks/docs/start/concepts.md",
+]
+
+[[section.group]]
+title = "Guides"
+pages = [
+  ".src/benchmarks/docs/guides/run-the-campaign.md",
+  ".src/benchmarks/docs/guides/share-your-runs.md",
+]
+
+[[section.group]]
+title = "Reference"
+pages = [
+  ".src/benchmarks/docs/reference/matrix.md",
+  ".src/benchmarks/docs/reference/record.md",
+  ".src/benchmarks/docs/reference/results-table.md",
+  ".src/benchmarks/docs/reference/settings.md",
+  ".src/benchmarks/docs/METHOD.md",
+]
+
+[[page]]
+src = ".src/benchmarks/docs/start/overview.md"
+url = "/benchmarks/overview/"
+section = "benchmarks"
+[[page]]
+src = ".src/benchmarks/docs/start/install.md"
+url = "/benchmarks/install/"
+section = "benchmarks"
+[[page]]
+src = ".src/benchmarks/docs/start/first-run.md"
+url = "/benchmarks/first-run/"
+section = "benchmarks"
+[[page]]
+src = ".src/benchmarks/docs/start/concepts.md"
+url = "/benchmarks/concepts/"
+section = "benchmarks"
+[[page]]
+src = ".src/benchmarks/docs/guides/run-the-campaign.md"
+url = "/benchmarks/run-the-campaign/"
+section = "benchmarks"
+[[page]]
+src = ".src/benchmarks/docs/guides/share-your-runs.md"
+url = "/benchmarks/share-your-runs/"
+section = "benchmarks"
+[[page]]
+src = ".src/benchmarks/docs/reference/matrix.md"
+url = "/benchmarks/matrix/"
+section = "benchmarks"
+[[page]]
+src = ".src/benchmarks/docs/reference/record.md"
+url = "/benchmarks/record/"
+section = "benchmarks"
+[[page]]
+src = ".src/benchmarks/docs/reference/results-table.md"
+url = "/benchmarks/results-table/"
+section = "benchmarks"
+[[page]]
+src = ".src/benchmarks/docs/reference/settings.md"
+url = "/benchmarks/settings/"
+section = "benchmarks"
+[[page]]
+src = ".src/benchmarks/docs/METHOD.md"
+url = "/benchmarks/method/"
+section = "benchmarks"
+
+[[asset]]
+src = ".src/lokraft/docs/img"
+url = "/lokraft/img"
+
+[[asset]]
+src = ".src/lokpit/docs/img"
+url = "/lokpit/img"
+
+[data.sites.lokraft]
+title = "lokraft"
+lede = "The desktop client: a chat window, and a studio for images, audio and video."
+primary = { label = "Read the documentation", url = "/lokraft/overview/" }
+secondary = { label = "Install", url = "/lokraft/install/" }
+images = "/lokraft/img/"
+slides = [
+  { file = "lokraft-chat.png", title = "Chat", caption = "A reply streams in, with its rate, its token count and its time once it ends" },
+  { file = "lokraft-studio-result.png", title = "Studio", caption = "Each kind of render has its tab, its prompt and the settings of its model, and the result beside them" },
+  { file = "lokraft-models.png", title = "Models", caption = "The models of the server, loaded or on disk, and the pull of a new one" },
+  { file = "lokraft-logs.png", title = "Logs", caption = "The lines of lokraft, filtered by level and searched by text" },
+]
+ways_title = "Ways in"
+start = [
+  { label = "Read the overview", text = "What it does, and in which state.", url = "/lokraft/overview/" },
+  { label = "Install", text = "Get it, and check that it runs.", url = "/lokraft/install/" },
+  { label = "First run", text = "From nothing to a first result.", url = "/lokraft/first-run/" },
+  { label = "Concepts", text = "The words the guides use.", url = "/lokraft/concepts/" },
+]
+
+[data.sites.lokprof]
+title = "lokprof"
+lede = "Benchmarks a local inference server against another, on the same prompts and the same clock."
+primary = { label = "Read the documentation", url = "/lokprof/overview/" }
+secondary = { label = "Install", url = "/lokprof/install/" }
+images = "/lokprof/img/"
+ways_title = "Ways in"
+start = [
+  { label = "Read the overview", text = "What it does, and in which state.", url = "/lokprof/overview/" },
+  { label = "Install", text = "Get it, and check that it runs.", url = "/lokprof/install/" },
+  { label = "First run", text = "From nothing to a first result.", url = "/lokprof/first-run/" },
+  { label = "Concepts", text = "The words the guides use.", url = "/lokprof/concepts/" },
+]
+
+[data.sites.lokpit]
+title = "lokpit"
+lede = "Watches a loken cluster: what each node holds, what it measures, and where they disagree."
+primary = { label = "Read the documentation", url = "/lokpit/overview/" }
+secondary = { label = "Install", url = "/lokpit/install/" }
+images = "/lokpit/img/"
+slides = [
+  { file = "lokpit-gui.png", title = "Window", caption = "A card per node, and the findings of doctor in a side panel" },
+  { file = "lokpit-tui.svg", title = "Terminal", caption = "The same round in a terminal, with its keys in the title of the nodes panel" },
+]
+ways_title = "Ways in"
+start = [
+  { label = "Read the overview", text = "What it does, and in which state.", url = "/lokpit/overview/" },
+  { label = "Install", text = "Get it, and check that it runs.", url = "/lokpit/install/" },
+  { label = "First run", text = "From nothing to a first result.", url = "/lokpit/first-run/" },
+  { label = "Concepts", text = "The words the guides use.", url = "/lokpit/concepts/" },
+]
+
+[data.sites.benchmarks]
+title = "benchmarks"
+lede = "The bench campaign: its driver, its matrix, its protocol, and the runs every machine shares."
+primary = { label = "Read the documentation", url = "/benchmarks/overview/" }
+secondary = { label = "Install", url = "/benchmarks/install/" }
+images = "/benchmarks/img/"
+ways_title = "Ways in"
+start = [
+  { label = "Read the overview", text = "What it does, and in which state.", url = "/benchmarks/overview/" },
+  { label = "Install", text = "Get it, and check that it runs.", url = "/benchmarks/install/" },
+  { label = "First run", text = "From nothing to a first result.", url = "/benchmarks/first-run/" },
+  { label = "Concepts", text = "The words the guides use.", url = "/benchmarks/concepts/" },
+]
+
+[[mirror]]
+url = "https://github.com/loken-ai/loken/blob/main/"
+src = ".src/loken"
+exclude = ["docs/STATUS.md", "docs/BUILDING.md", "NOTICE.md"]
+
+[[mirror]]
+url = "https://github.com/loken-ai/lokode/blob/main/"
+src = ".src/lokode"
+
+[[mirror]]
+url = "https://github.com/loken-ai/lokraft/blob/main/"
+src = ".src/lokraft"
+
+[[mirror]]
+url = "https://github.com/loken-ai/lokprof/blob/main/"
+src = ".src/lokprof"
+
+[[mirror]]
+url = "https://github.com/loken-ai/lokpit/blob/main/"
+src = ".src/lokpit"
+
+[[mirror]]
+url = "https://github.com/loken-ai/benchmarks/blob/main/"
+src = ".src/benchmarks"
+
