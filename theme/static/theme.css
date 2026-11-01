@@ -55,11 +55,11 @@ dialog.lightbox img { display: block; max-width: 96vw; max-height: 94vh; width: 
 
 /* Ground: the ground of the brand under the page, a lit tile for the one thing that matters, and a
    switch between the light and the dark theme. */
-:root { --dot: #e3e8f3; --mint: #1b9068; --mint-fg: #ffffff; --box-wall: rgba(20, 30, 60, .05); --box-floor: rgba(20, 30, 60, .08); }
+:root { --dot: #e3e8f3; --mint: #1b9068; --mint-fg: #ffffff; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --dot: #1a2347; --mint: #34d399; --mint-fg: #06141a; --box-wall: rgba(255, 255, 255, .04); --box-floor: rgba(255, 255, 255, .08); }
+  :root:not([data-theme="light"]) { --dot: #1a2347; --mint: #34d399; --mint-fg: #06141a; }
 }
-:root[data-theme="dark"] { --dot: #1a2347; --mint: #34d399; --mint-fg: #06141a; --box-wall: rgba(255, 255, 255, .04); --box-floor: rgba(255, 255, 255, .08); }
+:root[data-theme="dark"] { --dot: #1a2347; --mint: #34d399; --mint-fg: #06141a; }
 body.ground { background-image: radial-gradient(var(--dot) 1px, transparent 1px); background-size: 28px 28px; }
 /* Flat, as the design draws it: a fine outline for a box, no shadow, no coloured bar on top. */
 .card, .card.read, .card.read.main { box-shadow: none; border: 1px solid var(--line); border-radius: 14px; padding: 20px; background: var(--surface); }
@@ -76,10 +76,7 @@ figure.shot img, .prose figure img, .prose pre, pre.code, pre.screen { box-shado
 .ground-hero .lede { margin: 0; font-size: 20px; color: var(--muted); max-width: 520px; }
 .ground-hero .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .ground-hero .art { flex: 1 1 380px; min-width: 0; display: flex; justify-content: center; }
-.ground-hero .art svg { width: 100%; max-width: 460px; height: auto; }
-.box-wall { fill: var(--box-wall); stroke: #3b6fe0; stroke-opacity: .5; }
-.box-floor { fill: var(--box-floor); stroke: #3b6fe0; stroke-opacity: .7; }
-.tiles { stroke: var(--bg); }
+.ground-hero .art img { width: 100%; max-width: 260px; height: auto; }
 .btn { display: inline-block; padding: 12px 22px; border-radius: 10px; font-weight: 600; }
 .btn:hover { text-decoration: none; filter: brightness(1.08); }
 .btn.primary { background: var(--mint); color: var(--mint-fg); }
@@ -178,7 +175,7 @@ figure.diagram svg { display: block; max-width: none; height: auto; }
 :is(h2, h3, h4, h5, h6) > a { color: inherit; text-decoration: none; }
 
 /* The home of a component: its logo as the art of the hero, and no second title below. */
-.ground-hero .art img { display: block; width: 100%; max-width: 260px; height: auto; margin: 0 auto; filter: drop-shadow(0 12px 28px rgba(0,0,0,.18)); }
+.ground-hero .art img { display: block; width: 100%; max-width: 260px; height: auto; margin: 0 auto; }
 
 /* A card is one link: the whole card opens it. The cards of the start are numbered in order. */
 .cards .card { position: relative; }
@@ -227,7 +224,7 @@ main.with-side.with-toc { grid-template-columns: 240px minmax(0, 1fr) 210px; }
   .side b { display: none; }
 }
 
-.side a { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-top: 4px; padding-bottom: 4px; line-height: 1.4; }
+.side a { display: block; overflow-wrap: anywhere; padding-top: 4px; padding-bottom: 4px; line-height: 1.4; }
 .side details.grp > a { margin-left: 8px; }
 
 /* The widgets of dkt read these variables. */

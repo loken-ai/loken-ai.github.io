@@ -18,15 +18,15 @@
 {% if h.install %}<code class="install">{{ h.install }}</code>{% endif %}
 {% if h.facts %}<ul class="facts">{% for f in h.facts %}<li>{{ f }}</li>{% endfor %}</ul>{% endif %}
 </div>
-<div class="art"><img src="/brand/{{ section.name }}.svg" alt="" width="260" height="260"></div>
+<div class="art"><picture><source media="(prefers-color-scheme: dark)" srcset="/brand/{{ section.name }}-dark.svg"><img src="/brand/{{ section.name }}-light.svg" alt="" width="260"></picture></div>
 </section>
 {% if slides %}<section>{% include "partials/showcase.html" %}</section>{% endif %}
 {% if h.ways %}<section><h2>{{ h.ways_title }}</h2>
 <div class="cards ways">{% for w in h.ways %}<article class="card way"><h3 class="title"><a href="{{ w.url }}">{{ w.title }}</a></h3><p>{{ w.text }}</p>{% if w.command %}<p><code>{{ w.command }}</code></p>{% endif %}</article>
 {% endfor %}</div></section>{% endif %}
 <section><h2>Guides</h2>
-<div class="cards">{% for g in data.menu[section.name] if g.title == "Guides" %}{% for e in g.pages %}{% for p in section.pages if p.url == e.url %}<article class="card read"><h3 class="title"><a href="{{ p.url }}">{{ e.label }}</a></h3>{% if p.description %}<p>{{ p.description }}</p>{% endif %}</article>
-{% endfor %}{% endfor %}{% endfor %}</div></section>
+<div class="cards">{% for g in section.groups if g.title == "Guides" %}{% for p in g.pages %}<article class="card read"><h3 class="title"><a href="{{ p.url }}">{{ p.nav_title }}</a></h3>{% if p.description %}<p>{{ p.description }}</p>{% endif %}</article>
+{% endfor %}{% endfor %}</div></section>
 <section><h2>Start</h2>
 <div class="cards start">{% for l in h.start %}<article class="card"><h3 class="title"><a href="{{ l.url }}">{{ l.label }}</a></h3>{% if l.text %}<p>{{ l.text }}</p>{% endif %}</article>
 {% endfor %}</div>
