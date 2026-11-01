@@ -189,3 +189,101 @@ figure.diagram svg { display: block; max-width: none; height: auto; }
 .cards.start .card .title::before { content: counter(step, decimal-leading-zero); display: block; font: 600 12px var(--mono); letter-spacing: .08em; color: var(--mint); margin-bottom: 6px; }
 .cards.start .card .title { display: block; }
 .cards.start + pre.code { margin-top: 18px; }
+/* The menu of a component in groups, the outline of the page, the crumbs and the pager. */
+main.with-side { grid-template-columns: 240px minmax(0, 1fr); }
+main.with-side.with-toc { grid-template-columns: 240px minmax(0, 1fr) 210px; }
+.doc { min-width: 0; }
+.side .who { display: flex; align-items: center; gap: 10px; padding: 0 10px 14px; color: var(--fg); font: 600 15px var(--mono); }
+.side .who:hover { background: none; }
+.side details.grp { display: grid; gap: 1px; padding: 2px 0 6px; }
+.side details.grp > summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; padding: 6px 10px; font: 600 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border-radius: 8px; }
+.side details.grp > summary::-webkit-details-marker { display: none; }
+.side details.grp > summary::before { content: ""; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(-45deg); transition: transform .15s; }
+.side details.grp[open] > summary::before { transform: rotate(45deg); }
+.side details.grp > summary:hover { color: var(--fg); background: var(--surface2); }
+.side details.grp > a { margin-left: 8px; }
+.side a[aria-current="page"] { color: var(--mint); background: color-mix(in srgb, var(--mint) 12%, transparent); }
+.crumbs { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.crumbs a { color: var(--muted); }
+.crumbs a:hover { color: var(--fg); }
+.toc { position: sticky; top: 16px; display: grid; gap: 1px; align-content: start; font-size: 13px; max-height: calc(100vh - 32px); overflow-y: auto; overscroll-behavior: contain; }
+.toc b { font: 600 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 0 10px 6px; }
+.toc a { color: var(--muted); padding: 4px 10px; border-left: 2px solid var(--line); line-height: 1.35; }
+.toc a.l3 { padding-left: 22px; }
+.toc a:hover { color: var(--fg); text-decoration: none; }
+.toc a.on { color: var(--mint); border-left-color: var(--mint); font-weight: 600; }
+.pager { display: flex; justify-content: space-between; gap: 16px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); }
+.pager a { display: grid; gap: 2px; padding: 12px 16px; border: 1px solid var(--line); border-radius: var(--radius); color: var(--fg); background: var(--surface); max-width: 48%; }
+.pager a:hover { border-color: var(--mint); text-decoration: none; }
+.pager a.next { text-align: right; margin-left: auto; }
+.pager small { color: var(--muted); font: 600 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+@media (max-width: 1100px) {
+  main.with-side.with-toc { grid-template-columns: 240px minmax(0, 1fr); }
+  .toc { display: none; }
+}
+@media (max-width: 800px) {
+  main.with-side, main.with-side.with-toc { grid-template-columns: 1fr; }
+  .side { grid-auto-flow: row; overflow-x: visible; }
+  .side b { display: none; }
+}
+
+.side a { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-top: 4px; padding-bottom: 4px; line-height: 1.4; }
+.side details.grp > a { margin-left: 8px; }
+
+/* The widgets of dkt read these variables. */
+:root { --accent: var(--mint); --accent-bg: color-mix(in srgb, var(--mint) 12%, transparent); }
+
+/* The headings of the page, under its entry in the menu. */
+main.with-side, main.with-side.with-toc { grid-template-columns: 240px minmax(0, 1fr); }
+.side .sub { display: grid; margin: 2px 0 4px 18px; border-left: 1px solid var(--line); }
+.side .sub a { font-size: 13px; padding: 2px 10px; margin: 0; border-radius: 0; border-left: 2px solid transparent; margin-left: -1px; }
+.side .sub a.on { color: var(--mint); border-left-color: var(--mint); background: none; font-weight: 600; }
+.toc { display: none; }
+
+/* The top bar stays at the top of the window. The menu and the anchors keep clear of it. */
+:root { --bar: 60px; }
+.top { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px); background: color-mix(in srgb, var(--bg) 88%, transparent); }
+html { scroll-padding-top: calc(var(--bar) + 12px); }
+.side, .toc { top: calc(var(--bar) + 16px); max-height: calc(100vh - var(--bar) - 32px); }
+@media (max-width: 800px) { .side { top: auto; max-height: none; } }
+
+/* A long command inside a step scrolls in its block and does not widen the page. */
+.dkt-widget li, .dkt-widget .dkt-step { min-width: 0; }
+.dkt-widget pre { max-width: 100%; box-sizing: border-box; overflow-x: auto; }
+.doc, .doc .prose { min-width: 0; max-width: 100%; }
+
+/* Narrow screens: a table scrolls inside its own block, a figure and a block of code fit the column. */
+.prose svg, .prose img { max-width: 100%; height: auto; }
+.prose pre { max-width: 100%; overflow-x: auto; }
+@media (max-width: 800px) {
+  .prose table, .dkt-widget table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .prose th, .prose td { min-width: 0; }
+  .showcase { max-width: 100%; }
+  .ground-hero { grid-template-columns: 1fr; }
+  .ground-hero .art { display: none; }
+  .wrap { padding-left: 16px; padding-right: 16px; }
+}
+
+/* Nothing widens the page: a widget scrolls inside itself, long words break, the filter wraps. */
+.dkt-widget { max-width: 100%; overflow-x: auto; }
+.dkt-widget input, .dkt-widget select { max-width: 100%; box-sizing: border-box; }
+.dkt-widget .dkt-bar, .dkt-widget [class*="filter"] { flex-wrap: wrap; }
+.prose code, .prose p, .prose li, .pager a { overflow-wrap: anywhere; }
+.pager a { max-width: 100%; }
+body { overflow-x: clip; }
+
+/* Last, so that nothing above overrides it: on a narrow screen the menu comes above the page. */
+@media (max-width: 800px) {
+  main.with-side, main.with-side.with-toc { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .side { position: static; max-height: none; overflow: visible; }
+  .side details.grp { padding: 0; }
+}
+
+/* The fixed bar is opaque, and on a narrow screen it takes 2 rows. */
+.top { background: var(--bg); backdrop-filter: none; border-bottom: 1px solid var(--line); }
+@media (max-width: 800px) { :root { --bar: 112px; } }
+
+/* A diagram wider than the column scrolls inside its own block. */
+.diagram { max-width: 100%; overflow-x: auto; }
+.showcase .tabs { max-width: 100%; }
+

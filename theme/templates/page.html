@@ -1,12 +1,30 @@
+{# A page of a component: its menu in groups on the left, the page, then the outline of the page on the right. #}
 {% extends "base.html" %}
 {% block main %}
 {% set sec = site.sections[page.section] if page.section else none %}
+{% set groups = data.menu[page.section] if (page.section and data.menu and data.menu[page.section]) else none %}
+{% set toc = page.headings | selectattr("level", "in", [2, 3]) | list %}
+{% set root = sec.url if sec else '/' %}
+{% set at = namespace(group=none, prev=none, next=none, flat=[]) %}
+{% if groups %}{% for g in groups %}{% for e in g.pages %}{% set at.flat = at.flat + [e] %}{% if e.url == page.url %}{% set at.group = g.title %}{% endif %}{% endfor %}{% endfor %}{% endif %}
+{% for e in at.flat %}{% if e.url == page.url %}{% if not loop.first %}{% set at.prev = at.flat[loop.index0 - 1] %}{% endif %}{% if not loop.last %}{% set at.next = at.flat[loop.index0 + 1] %}{% endif %}{% endif %}{% endfor %}
 <main class="wrap{% if sec and sec.sidebar %} with-side{% endif %}">
 {% if sec and sec.sidebar %}
-<aside class="side"><b>{{ sec.title }}</b>{% for p in sec.pages %}<a href="{{ p.url }}"{% if p.url == page.url %} aria-current="page"{% endif %}>{{ p.nav_title }}</a>{% endfor %}</aside>
+<nav class="side" aria-label="{{ sec.title }}"><a class="who" href="{{ root }}"><img src="/brand/{{ page.section }}-small.svg" alt="" width="28" height="28"><span>{{ sec.title }}</span></a>
+{% if groups %}{% for g in groups %}<details class="grp"{% if g.title == at.group %} open{% endif %}><summary>{{ g.title }}</summary>{% for e in g.pages %}<a href="{{ e.url }}" title="{{ e.label }}"{% if e.url == page.url %} aria-current="page"{% endif %}>{{ e.label }}</a>{% if e.url == page.url and toc %}<span class="sub">{% for h in toc if h.level == 2 %}<a href="#{{ h.id }}" title="{{ h.text }}">{{ h.text }}</a>{% endfor %}</span>{% endif %}{% endfor %}</details>{% endfor %}
+{% else %}{% for p in sec.pages %}<a href="{{ p.url }}"{% if p.url == page.url %} aria-current="page"{% endif %}>{{ p.nav_title }}</a>{% endfor %}{% endif %}
+</nav>
 {% endif %}
+<div class="doc">
+{% if sec %}<div class="crumbs"><a href="{{ root }}">{{ sec.title }}</a>{% if at.group %} <span aria-hidden="true">/</span> {{ at.group }}{% endif %} <span aria-hidden="true">/</span> {{ page.nav_title }}</div>{% endif %}
 <div class="prose">
 {{ page.content }}
 </div>
+{% if at.prev or at.next %}<nav class="pager" aria-label="Pages of {{ sec.title }}">
+{% if at.prev %}<a class="prev" href="{{ at.prev.url }}" rel="prev"><small>Previous</small>{{ at.prev.label }}</a>{% else %}<span></span>{% endif %}
+{% if at.next %}<a class="next" href="{{ at.next.url }}" rel="next"><small>Next</small>{{ at.next.label }}</a>{% endif %}
+</nav>{% endif %}
+</div>
 </main>
 {% endblock %}
+{% block script %}<script src="{{ site.base_path }}/docs.js"></script>{% endblock %}

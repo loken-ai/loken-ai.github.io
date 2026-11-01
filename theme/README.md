@@ -1,6 +1,6 @@
 # The theme of the component sites
 
-The templates and the style every site of loken-ai shares. A site is built by `mdkt site` from its
+The templates and the style every site of loken-ai shares. A site is built by `dkt site` from its
 own documents, and names this directory as its `theme`.
 
 | Path                           | What it holds                                                            |
@@ -8,19 +8,23 @@ own documents, and names this directory as its `theme`.
 | `templates/base.html`          | the page: header with the menu, footer, the blocks `title`, `main`, `script` |
 | `templates/page.html`          | a document, with the side menu of its section when the section has one   |
 | `templates/section.html`       | the index of a section: a card for each page                             |
-| `templates/partials/showcase.html` | the scenes in a list and the picture of the chosen one beside it         |
+| `templates/component.html`     | the home of a component: hero, showcase and ways in from `data.sites`, then its page |
+| `templates/partials/showcase.html` | the scenes in a list and the picture of the chosen one beside it, a scene is a light and dark pair or a single `file` |
 | `templates/partials/hero.html`     | the top of a home page: title, lede, buttons, install line and the box |
 | `static/theme.css`             | the layer of style for documents, over `/site.css` of the root site      |
 | `static/showcase.js`           | what the showcase does: advance, hold, choose, pause, enlarge            |
 | `static/theme.js`              | the switch between the light and the dark theme                          |
+| `static/docs.js`               | the headings of the page under its menu entry follow the reading         |
 | `static/search.js`             | the palette that searches the titles of the site                         |
 
 A site replaces any template by writing one of the same name in its own `templates`, and any file
 by writing one of the same name in its own `static`.
 
+The components of dkt (tabs, quiz, steps and the others) need nothing here: `dkt site` writes their files and adds them to every page. The theme only gives the colours they read: `--accent` and `--accent-bg`, in `static/theme.css`.
+
 ## Using it
 
-The documents and the properties of a site stay in its repository. Its `mdkt.toml` names the theme.
+The documents and the properties of a site stay in its repository. Its `dkt.toml` names the theme.
 
 ```
 [site]
