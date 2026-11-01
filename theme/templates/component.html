@@ -1,0 +1,35 @@
+{# The home of a component, at the address of its section: the hero, the showcase, the ways in, the guides and how to start. Its data is data.sites. #}
+{% extends "base.html" %}
+{% block title %}{{ section.title }} - {{ site.title }}{% endblock %}
+{% block main %}
+{% set h = data.sites[section.name] %}
+{% set slides = h.slides %}
+{% set images = h.images %}
+<main class="wrap"><div class="prose">
+<section class="ground-hero">
+<div class="copy">
+{% if h.tag %}<span class="tag">{{ h.tag }}</span>{% endif %}
+<h1>{{ h.title }}</h1>
+<p class="lede">{{ h.lede }}</p>
+<div class="actions">
+{% if h.primary %}<a class="btn primary" href="{{ h.primary.url }}">{{ h.primary.label }}</a>{% endif %}
+{% if h.secondary %}<a class="btn ghost" href="{{ h.secondary.url }}">{{ h.secondary.label }}</a>{% endif %}
+</div>
+{% if h.install %}<code class="install">{{ h.install }}</code>{% endif %}
+{% if h.facts %}<ul class="facts">{% for f in h.facts %}<li>{{ f }}</li>{% endfor %}</ul>{% endif %}
+</div>
+<div class="art"><img src="/brand/{{ section.name }}.svg" alt="" width="260" height="260"></div>
+</section>
+{% if slides %}<section>{% include "partials/showcase.html" %}</section>{% endif %}
+{% if h.ways %}<section><h2>{{ h.ways_title }}</h2>
+<div class="cards ways">{% for w in h.ways %}<article class="card way"><h3 class="title"><a href="{{ w.url }}">{{ w.title }}</a></h3><p>{{ w.text }}</p>{% if w.command %}<p><code>{{ w.command }}</code></p>{% endif %}</article>
+{% endfor %}</div></section>{% endif %}
+<section><h2>Guides</h2>
+<div class="cards">{% for g in data.menu[section.name] if g.title == "Guides" %}{% for e in g.pages %}{% for p in section.pages if p.url == e.url %}<article class="card read"><h3 class="title"><a href="{{ p.url }}">{{ e.label }}</a></h3>{% if p.description %}<p>{{ p.description }}</p>{% endif %}</article>
+{% endfor %}{% endfor %}{% endfor %}</div></section>
+<section><h2>Start</h2>
+<div class="cards start">{% for l in h.start %}<article class="card"><h3 class="title"><a href="{{ l.url }}">{{ l.label }}</a></h3>{% if l.text %}<p>{{ l.text }}</p>{% endif %}</article>
+{% endfor %}</div>
+{% if h.install %}<pre class="code"><code>{{ h.install }}</code></pre>{% endif %}</section>
+</div></main>
+{% endblock %}

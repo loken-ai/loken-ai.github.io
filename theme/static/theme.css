@@ -176,3 +176,16 @@ figure.diagram svg { display: block; max-width: none; height: auto; }
 
 /* A heading is a link to itself and looks like a heading. */
 :is(h2, h3, h4, h5, h6) > a { color: inherit; text-decoration: none; }
+
+/* The home of a component: its logo as the art of the hero, and no second title below. */
+.ground-hero .art img { display: block; width: 100%; max-width: 260px; height: auto; margin: 0 auto; filter: drop-shadow(0 12px 28px rgba(0,0,0,.18)); }
+
+/* A card is one link: the whole card opens it. The cards of the start are numbered in order. */
+.cards .card { position: relative; }
+.cards .card .title a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.cards .card .title a:focus-visible::after { outline: 2px solid var(--mint); outline-offset: 2px; }
+.cards.start { counter-reset: step; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.cards.start .card { counter-increment: step; }
+.cards.start .card .title::before { content: counter(step, decimal-leading-zero); display: block; font: 600 12px var(--mono); letter-spacing: .08em; color: var(--mint); margin-bottom: 6px; }
+.cards.start .card .title { display: block; }
+.cards.start + pre.code { margin-top: 18px; }

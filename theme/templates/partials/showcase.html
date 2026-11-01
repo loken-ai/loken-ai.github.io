@@ -9,7 +9,7 @@
 <div class="window">
 <div class="chrome"><i></i><i></i><i></i><span class="label">{{ slides[0].title }}</span></div>
 <div class="panels">
-{% for s in slides %}<div class="panel" role="tabpanel" id="panel-{{ loop.index }}" aria-labelledby="tab-{{ loop.index }}" data-active="{{ 'true' if loop.first else 'false' }}"><button type="button" class="zoom" aria-label="Enlarge: {{ s.caption }}"><picture><source media="(prefers-color-scheme: dark)" srcset="{{ images }}{{ s.name }}-dark.png"><img src="{{ images }}{{ s.name }}-light.png" alt="{{ s.caption }}"{% if not loop.first %} loading="lazy"{% endif %}></picture></button></div>
+{% for s in slides %}<div class="panel" role="tabpanel" id="panel-{{ loop.index }}" aria-labelledby="tab-{{ loop.index }}" data-active="{{ 'true' if loop.first else 'false' }}"><button type="button" class="zoom" aria-label="Enlarge: {{ s.caption }}">{% if s.file %}<img src="{{ images }}{{ s.file }}" alt="{{ s.caption }}"{% if not loop.first %} loading="lazy"{% endif %}>{% else %}<picture><source media="(prefers-color-scheme: dark)" srcset="{{ images }}{{ s.name }}-dark.png"><img src="{{ images }}{{ s.name }}-light.png" alt="{{ s.caption }}"{% if not loop.first %} loading="lazy"{% endif %}></picture>{% endif %}</button></div>
 {% endfor %}
 </div>
 </div>
