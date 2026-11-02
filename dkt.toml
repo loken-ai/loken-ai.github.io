@@ -40,10 +40,6 @@ name = "Benchmarks"
 url = "/benchmarks/"
 section = "benchmarks"
 
-[[nav]]
-name = "Results"
-url = "/benchmarks/results/"
-
 # loken
 [[section]]
 name = "loken"
@@ -1025,6 +1021,9 @@ primary = { label = "Read the documentation", url = "/benchmarks/overview/" }
 secondary = { label = "Install", url = "/benchmarks/install/" }
 images = "/benchmarks/img/"
 ways_title = "Ways in"
+ways = [
+  { title = "Browse the results", text = "The runs of every machine, by hardware, with charts.", url = "/benchmarks/results/" },
+]
 start = [
   { label = "Read the overview", text = "What it does, and in which state.", url = "/benchmarks/overview/" },
   { label = "Install", text = "Get it, and check that it runs.", url = "/benchmarks/install/" },
