@@ -14,6 +14,7 @@
 <div class="actions">
 {% if h.primary %}<a class="btn primary" href="{{ h.primary.url }}">{{ h.primary.label }}</a>{% endif %}
 {% if h.secondary %}<a class="btn ghost" href="{{ h.secondary.url }}">{{ h.secondary.label }}</a>{% endif %}
+{% if h.tertiary %}<a class="btn ghost" href="{{ h.tertiary.url }}">{{ h.tertiary.label }}</a>{% endif %}
 </div>
 {% if h.install %}<code class="install">{{ h.install }}</code>{% endif %}
 {% if h.facts %}<ul class="facts">{% for f in h.facts %}<li>{{ f }}</li>{% endfor %}</ul>{% endif %}

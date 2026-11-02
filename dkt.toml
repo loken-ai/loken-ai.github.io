@@ -1019,11 +1019,9 @@ title = "benchmarks"
 lede = "The bench campaign: its driver, its matrix, its protocol, and the runs every machine shares."
 primary = { label = "Read the documentation", url = "/benchmarks/overview/" }
 secondary = { label = "Install", url = "/benchmarks/install/" }
+tertiary = { label = "Browse the results", url = "/benchmarks/results/" }
 images = "/benchmarks/img/"
 ways_title = "Ways in"
-ways = [
-  { title = "Browse the results", text = "The runs of every machine, by hardware, with charts.", url = "/benchmarks/results/" },
-]
 start = [
   { label = "Read the overview", text = "What it does, and in which state.", url = "/benchmarks/overview/" },
   { label = "Install", text = "Get it, and check that it runs.", url = "/benchmarks/install/" },
