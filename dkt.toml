@@ -533,28 +533,28 @@ tag = "Experimental"
 text = "A coding agent in the terminal, against a model on your own machine."
 docs = "/lokode/"
 repo = "https://github.com/loken-ai/lokode"
-release = "v0.3.0"
+release = "v0.4.0"
 
 [[data.components]]
 name = "lokraft"
 text = "The desktop client: a chat window, and a studio for images, audio and video."
 docs = "/lokraft/"
 repo = "https://github.com/loken-ai/lokraft"
-release = "v0.1.0"
+release = "v0.2.0"
 
 [[data.components]]
 name = "lokpit"
 text = "Watches a loken cluster: what each node holds, what it measures, and where they disagree."
 docs = "/lokpit/"
 repo = "https://github.com/loken-ai/lokpit"
-release = "v0.1.0"
+release = "v0.2.0"
 
 [[data.components]]
 name = "lokprof"
 text = "Benchmarks a local inference server against another, on the same prompts and the same clock."
 docs = "/lokprof/"
 repo = "https://github.com/loken-ai/lokprof"
-release = "v0.4.1"
+release = "v0.5.0"
 
 [[data.components]]
 name = "benchmarks"

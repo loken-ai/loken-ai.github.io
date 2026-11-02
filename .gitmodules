@@ -1,0 +1,21 @@
+[submodule ".src/loken"]
+	path = .src/loken
+	url = https://github.com/loken-ai/loken.git
+[submodule ".src/lokode"]
+	path = .src/lokode
+	url = https://github.com/loken-ai/lokode.git
+[submodule ".src/lokraft"]
+	path = .src/lokraft
+	url = https://github.com/loken-ai/lokraft.git
+[submodule ".src/lokpit"]
+	path = .src/lokpit
+	url = https://github.com/loken-ai/lokpit.git
+[submodule ".src/lokprof"]
+	path = .src/lokprof
+	url = https://github.com/loken-ai/lokprof.git
+[submodule ".src/benchmarks"]
+	path = .src/benchmarks
+	url = https://github.com/loken-ai/benchmarks.git
+[submodule ".brand-src"]
+	path = .brand-src
+	url = https://github.com/loken-ai/.github.git
