@@ -322,6 +322,10 @@ src = ".src/loken/docs/img"
 url = "/loken/img"
 exclude = ["features-*"]
 
+[[asset]]
+src = ".src/loken/docs/anatomy"
+url = "/loken/anatomy"
+
 # lokode
 [[section]]
 name = "lokode"
